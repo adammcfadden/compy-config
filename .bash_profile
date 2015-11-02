@@ -1,7 +1,8 @@
 source ~/.bashrc
-chruby 2.1.1
+chruby 2.2.3
 
-# git shortcuts
+# shortcuts
+alias c='clear'
 alias ga='git add -A .'
 alias gc='git commit -m '
 alias gac='git commit -a -m '
@@ -10,9 +11,7 @@ alias gst='git status'
 alias gp='git push'
 alias be="bundle exec"
 alias brake="bundle exec rake"
-alias gcreate='~/.scripts/git_create_repo.sh'
 export CDPATH=.:"~/repos:self"
-
 
 ##OPTIONS
 
@@ -71,7 +70,7 @@ function proml {
 
 ##### CUSTOM PROMT AT PS1 and PS2
 
-PS1="$LIGHT_GREY\u$WHITE:$VIOLET\W$LIGHT_VIOLET\$(parse_git_branch)$DEFAULT $LIGHT_GREY|$VIOLET\j$LIGHT_GREY| <>$DEFAULT "
+PS1="$LIGHT_TEAL\u$WHITE:$LIGHT_YELLOW\W$LIGHT_GREEN\$(parse_git_branch)$DEFAULT $LIGHT_TEAL|$LIGHT_YELLOW\j$LIGHT_TEAL| <>$DEFAULT "
 
 # PS1="
 #  (\___/)
@@ -90,7 +89,6 @@ while [ $numtimes -gt 1 ]; do
   numtimes=$((numtimes-1))
 done
 
-PS2="$LIGHT_GREY$whitespace continue$WHITE:$VIOLET\W$LIGHT_VIOLET\$(parse_git_branch)$DEFAULT $LIGHT_GREY|$VIOLET\j$LIGHT_GREY| <>$DEFAULT "
+PS2="$LIGHT_YELLOW$whitespace continue$WHITE:$LIGHT_TEAL\W$LIGHT_GREEN\$(parse_git_branch)$DEFAULT $LIGHT_TEAL|$LIGHT_YELLOW\j$LIGHT_TEAL| <>$DEFAULT "
 }
-
 proml
